@@ -49,7 +49,7 @@ class AdminTaskController extends AdminBase
             }
 
             if ($errors == false) {
-                Task::updateTaskById($id, $options);
+                Task::updateTaskById($task, $options);
                 header("Location: /admin/task");
             }
 

@@ -70,15 +70,15 @@ include ROOT . '/App/Views/layouts/header.php';
 
                         <span>
                          
-                                        <a href="task/<?php echo $task['id'] ?>/edit"><?php echo $task['name'] ?></a>
+                                        <a href="task/<?php echo $task->id ?>/edit"><?php echo $task->name ?></a>
                         </span>
                                 <span class="pull-right label label-info">
-                           <?php echo $task['date']; ?>
+                           <?php echo $task->date; ?>
                         </span>
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <?php echo $task['message'] ?>
+                            <?php echo $task->message ?>
                             <hr/>
                             <div class="pull-right">
                                 <a class="btn btn-info" href="#">
@@ -92,7 +92,6 @@ include ROOT . '/App/Views/layouts/header.php';
                     </div>
                 <?php } ?>
                 <div class="text-center">
-                    <?php //$tasks->render() ?>
                 </div>
             <?php } ?>
         </div>

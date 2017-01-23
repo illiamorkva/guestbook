@@ -18,7 +18,7 @@ abstract class AdminBase
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
 
-        if ($user['role'] == 'admin') {
+        if ($user->role == 'admin') {
             return true;
         }
 

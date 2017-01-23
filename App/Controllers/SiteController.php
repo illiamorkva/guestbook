@@ -40,8 +40,9 @@ class SiteController
         if (!User::isGuest()) {
             $userId = User::checkLogged();
             $user = User::getUserById($userId);
-            $userName = $user['name'];
-            $userEmail = $user['email'];
+            $userName = $user->name;
+            $userEmail = $user->email;
+
         }
 
         require_once(ROOT . '/App/Views/site/index.php');

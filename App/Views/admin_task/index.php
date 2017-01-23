@@ -20,21 +20,21 @@ include ROOT . '/App/Views/layouts/header.php';
                         <div class="panel-heading">
                             <h3 class="panel-title">
                            <span>
-                         <a href="/admin/task/update/<?php echo $task['id'] ?>"><?php echo $task['name'] ?></a>
+                         <a href="/admin/task/update/<?php echo $task->id?>"><?php echo $task->name ?></a>
                         </span>
                                 <span class="pull-right label label-info">
-                           <?php echo $task['date']; ?>
+                           <?php echo $task->date ?>
                         </span>
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <?php echo $task['message'] ?>
+                            <?php echo $task->message ?>
                             <hr/>
                             <div class="pull-right">
-                                <a class="btn btn-info" href="/admin/task/update/<?php echo $task['id'] ?>">
+                                <a class="btn btn-info" href="/admin/task/update/<?php echo $task->id ?>">
                                     <i class="glyphicon glyphicon-pencil"></i>
                                 </a>
-                                <a class="btn btn-danger" href="/admin/task/delete/<?php echo $task['id'] ?>">
+                                <a class="btn btn-danger" href="/admin/task/delete/<?php echo $task->id?>">
                                     <i class="glyphicon glyphicon-trash"></i>
                                 </a>
                             </div>
@@ -42,7 +42,6 @@ include ROOT . '/App/Views/layouts/header.php';
                     </div>
                 <?php } ?>
                 <div class="text-center">
-                    <?php //$tasks->render() ?>
                 </div>
             <?php } ?>
         </div>
