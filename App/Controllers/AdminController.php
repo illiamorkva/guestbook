@@ -1,4 +1,6 @@
 <?php
+namespace App\Controllers;
+use App\Components\AdminBase;
 
 class AdminController extends AdminBase
 {
@@ -9,7 +11,7 @@ class AdminController extends AdminBase
     {
         self::checkAdmin();
 
-        require_once(ROOT . '/views/admin/index.php');
+        require_once(ROOT . '/App/Views/admin/index.php');
         return true;
     }
 

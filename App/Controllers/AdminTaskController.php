@@ -1,4 +1,7 @@
 <?php
+namespace App\Controllers;
+use App\Components\AdminBase;
+use App\Models\Task;
 
 /**
  * Task management in the admin panel
@@ -14,7 +17,7 @@ class AdminTaskController extends AdminBase
 
         $tasks = Task::getTaskList();
 
-        require_once(ROOT . '/views/admin_task/index.php');
+        require_once(ROOT . '/App/Views/admin_task/index.php');
         return true;
     }
 
@@ -53,7 +56,7 @@ class AdminTaskController extends AdminBase
 
         }
 
-        require_once(ROOT . '/views/admin_task/update.php');
+        require_once(ROOT . '/App/Views/admin_task/update.php');
         return true;
     }
 
@@ -70,7 +73,7 @@ class AdminTaskController extends AdminBase
             header("Location: /admin/task");
         }
 
-        require_once(ROOT . '/views/admin_task/delete.php');
+        require_once(ROOT . '/App/Views/admin_task/delete.php');
         return true;
     }
 

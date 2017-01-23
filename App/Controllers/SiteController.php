@@ -1,4 +1,8 @@
 <?php
+namespace App\Controllers;
+
+use App\Models\Task;
+use App\Models\User;
 
 class SiteController
 {
@@ -40,7 +44,7 @@ class SiteController
             $userEmail = $user['email'];
         }
 
-        require_once(ROOT . '/views/site/index.php');
+        require_once(ROOT . '/App/Views/site/index.php');
         return true;
     }
 }

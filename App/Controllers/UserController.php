@@ -1,4 +1,7 @@
 <?php
+namespace App\Controllers;
+
+use App\Models\User;
 
 class UserController
 {
@@ -48,7 +51,7 @@ class UserController
             }
         }
 
-        require_once(ROOT . '/views/user/register.php');
+        require_once(ROOT . '/App/Views/user/register.php');
         return true;
     }
 
@@ -84,7 +87,7 @@ class UserController
             }
         }
 
-        require_once(ROOT . '/views/user/login.php');
+        require_once(ROOT . '/App/Views/user/login.php');
         return true;
     }
 

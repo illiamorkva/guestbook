@@ -1,4 +1,7 @@
 <?php
+namespace App\Models;
+
+use App\Components\Db;
 
 class User
 {
@@ -18,9 +21,9 @@ class User
             . 'VALUES (:name, :email, :password)';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':name', $name, PDO::PARAM_STR);
-        $result->bindParam(':email', $email, PDO::PARAM_STR);
-        $result->bindParam(':password', $password, PDO::PARAM_STR);
+        $result->bindParam(':name', $name, \PDO::PARAM_STR);
+        $result->bindParam(':email', $email, \PDO::PARAM_STR);
+        $result->bindParam(':password', $password, \PDO::PARAM_STR);
         return $result->execute();
     }
 
@@ -37,8 +40,8 @@ class User
         $sql = 'SELECT * FROM user WHERE email = :email AND password = :password';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':email', $email, PDO::PARAM_INT);
-        $result->bindParam(':password', $password, PDO::PARAM_INT);
+        $result->bindParam(':email', $email, \PDO::PARAM_INT);
+        $result->bindParam(':password', $password, \PDO::PARAM_INT);
         $result->execute();
 
         $user = $result->fetch();
@@ -149,7 +152,7 @@ class User
         $sql = 'SELECT COUNT(*) FROM user WHERE email = :email';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, \PDO::PARAM_STR);
         $result->execute();
 
         if ($result->fetchColumn())
@@ -169,9 +172,9 @@ class User
         $sql = 'SELECT * FROM user WHERE id = :id';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
 
-        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
         $result->execute();
 
         return $result->fetch();

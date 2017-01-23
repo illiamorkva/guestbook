@@ -1,4 +1,7 @@
 <?php
+namespace App\Components;
+
+use App\Models\User;
 
 /**
  * Abstract class AdminBase contains general logic controllers, which

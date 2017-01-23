@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Components;
 /**
  * Class Db
  * Component for working with database
@@ -14,13 +14,13 @@ class Db
     public static function getConnection()
     {
         // Get the connection parameters from a file
-        $paramsPath = ROOT . '/config/db_params.php';
+        $paramsPath = ROOT . '/App/Config/db_params.php';
         $params =
             include($paramsPath);
 
         // Set the connection
         $dsn = "mysql:host={$params['host']};dbname={$params['dbname']}";
-        $db = new PDO($dsn, $params['user'], $params['password']);
+        $db = new \PDO($dsn, $params['user'], $params['password']);
 
         // Specify the encoding
         $db->exec("set names utf8");

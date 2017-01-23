@@ -1,4 +1,5 @@
 <?php
+namespace App\Components;
 /**
  * Class Router
  * Component to operate the routes
@@ -16,7 +17,7 @@ class Router {
 	 */
 	public function __construct() {
 
-		$routesPath = ROOT . '/config/routes.php';
+		$routesPath = ROOT . '/App/Config/routes.php';
 
 		$this -> routes =
 		include ($routesPath);
@@ -51,16 +52,16 @@ class Router {
 
 				$controllerName = array_shift($segments) . 'Controller';
 				$controllerName = ucfirst($controllerName);
-
+                $controllerName = '\App\Controllers\\'.$controllerName;
 				$actionName = 'action' . ucfirst(array_shift($segments));
 
 				$parameters = $segments;
 
-                $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
+                //$controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
 
-				if (file_exists($controllerFile)) {
-					include_once ($controllerFile);
-				}
+				//if (file_exists($controllerFile)) {
+				//	include_once ($controllerFile);
+				//}
 
                 $controllerObject = new $controllerName;
 

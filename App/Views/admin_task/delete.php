@@ -1,5 +1,5 @@
 <?php
-include ROOT . '/views/layouts/header.php';
+include ROOT . '/App/Views/layouts/header.php';
 ?>
     <section>
         <div class="container">
@@ -21,5 +21,5 @@ include ROOT . '/views/layouts/header.php';
         </div>
     </section>
 <?php
-include ROOT . '/views/layouts/footer.php';
+include ROOT . '/App/Views/layouts/footer.php';
 ?>

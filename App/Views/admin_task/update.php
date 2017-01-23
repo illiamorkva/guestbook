@@ -1,5 +1,5 @@
 <?php
-include ROOT . '/views/layouts/header.php';
+include ROOT . '/App/Views/layouts/header.php';
 ?>
 
     <div class="container">
@@ -57,5 +57,5 @@ include ROOT . '/views/layouts/header.php';
         </form>
     </div>
 <?php
-include ROOT . '/views/layouts/footer.php';
+include ROOT . '/App/Views/layouts/footer.php';
 ?>

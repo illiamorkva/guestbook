@@ -1,4 +1,7 @@
 <?php
+namespace App\Models;
+
+use App\Components\Db;
 
 /**
  * Class Task - model for working with tasks
@@ -17,9 +20,9 @@ class Task
         $sql = 'SELECT * FROM tasks WHERE id = :id';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
 
-        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
 
         $result->execute();
 
@@ -61,7 +64,7 @@ class Task
         $sql = 'DELETE FROM tasks WHERE id = :id';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
         return $result->execute();
     }
 
@@ -83,10 +86,10 @@ class Task
             WHERE id = :id";
 
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $id, PDO::PARAM_INT);
-        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':email', $options['email'], PDO::PARAM_STR);
-        $result->bindParam(':message', $options['message'], PDO::PARAM_STR);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        $result->bindParam(':name', $options['name'], \PDO::PARAM_STR);
+        $result->bindParam(':email', $options['email'], \PDO::PARAM_STR);
+        $result->bindParam(':message', $options['message'], \PDO::PARAM_STR);
         return $result->execute();
     }
 
@@ -105,9 +108,9 @@ class Task
             . '(:name, :email, :message, NOW())';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':name', $options['name'], PDO::PARAM_STR);
-        $result->bindParam(':email', $options['email'], PDO::PARAM_STR);
-        $result->bindParam(':message', $options['message'], PDO::PARAM_STR);
+        $result->bindParam(':name', $options['name'], \PDO::PARAM_STR);
+        $result->bindParam(':email', $options['email'], \PDO::PARAM_STR);
+        $result->bindParam(':message', $options['message'], \PDO::PARAM_STR);
         if ($result->execute()) {
             return $db->lastInsertId();
         }
