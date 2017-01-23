@@ -1,0 +1,16 @@
+{
+    "name": "phpstudent/exam.site",
+    "authors": [
+        {
+            "name": "Illia",
+            "email": "mor1l@yandex.ua"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
